@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BusE@se">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>bus_ease</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+  <script>
+    import { initializeApp } from "firebase/app";
+<!--    import { getAnalytics } from "firebase/analytics";-->
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFhdomD4yf_AD6bDFPToUxbbN1gRPY70U",
+      authDomain: "bus-ease-cf06b.firebaseapp.com",
+      projectId: "bus-ease-cf06b",
+      storageBucket: "bus-ease-cf06b.appspot.com",
+      messagingSenderId: "991402422958",
+      appId: "1:991402422958:web:420ed49b382dfb4416f33f",
+      measurementId: "G-2CJ9K2F5P8"
+    };
+
+    const app = initializeApp(firebaseConfig);
+<!--    const analytics = getAnalytics(app);-->
+  </script>
+
+</head>
+<body>
+<script defer src="main.dart.js"></script>
+<!--<script type="text/javascript"> window.flutterWebRenderer = "html"; </script>-->
+<!--<script src="flutter_bootstrap.js" async></script>-->
+</body>
+</html>

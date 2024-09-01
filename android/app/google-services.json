@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "991402422958",
+    "firebase_url": "https://bus-ease-cf06b-default-rtdb.firebaseio.com",
+    "project_id": "bus-ease-cf06b",
+    "storage_bucket": "bus-ease-cf06b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991402422958:android:0d08ebd6d7789aba16f33f",
+        "android_client_info": {
+          "package_name": "com.azfar.bus_ease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Qvqf2CTchCK0XLCxbBwtCiOEkYD9HIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
