@@ -42,11 +42,9 @@ class PdfPreviewPage extends StatelessWidget {
           IconButton(onPressed: (){
             Navigator.pushReplacement(
               context,
-              PageTransition(
-                  type: PageTransitionType.leftToRight,
-                  child: Home(),
-                  inheritTheme: true,
-                  ctx: context),
+              MaterialPageRoute(
+                builder: (context) => Home(),
+              ),
             );
           }, icon: Icon(Icons.arrow_back_ios_new, color: Colors.white,)),
         ],

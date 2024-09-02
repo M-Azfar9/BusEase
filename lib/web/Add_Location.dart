@@ -355,6 +355,7 @@ class _AddLocationsState extends State<AddLocations> {
                   right: size.width / 350,
                   child: FloatingActionButton(
                     onPressed: () {
+                      addLocCont.clear();
                       AddBox(size.height, size.width);
                     },
                     child: Icon(

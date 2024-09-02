@@ -64,8 +64,8 @@ class MyApp extends StatelessWidget {
       ):ThemeData.dark(),
       // theme: ThemeData.dark(),
       // darkTheme: ThemeData.light(),
-      // home: isMob? SplashScreen() : WebDashBoard(),
-      home: LoginWeb(),
+      home: isMob? SplashScreen() : LoginWeb(),
+      // home: LoginWeb(),
     );
   }
 }
@@ -215,56 +215,73 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
+          title: Text(currentUser == null? "Hi, User":"Hi, ${currentUser?.name}", style: GoogleFonts.play(fontSize: size.width/24, color: CupertinoColors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),),
         ),
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
+          child: Column(
             children: [
-              DrawerHeader(
-                child: Row(
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.zero,
                   children: [
-                    Opacity(opacity: 0.5,
-                    child: Icon(Icons.account_box, size: size.width/3,color: Colors.white,)),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                    DrawerHeader(
+                      child: Row(
                         children: [
-                          Text(
-                            '${currentUser?.name}',
-                            style: GoogleFonts.play(color: Colors.white, fontSize: size.width/20, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'Email: ${currentUser?.email}',
-                            style: GoogleFonts.play(color: Colors.white, fontSize: size.width/30, fontStyle: FontStyle.italic),
+                          Opacity(opacity: 0.5,
+                          child: Icon(Icons.account_box, size: size.width/3,color: Colors.white,)),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${currentUser?.name}',
+                                  style: GoogleFonts.play(color: Colors.white, fontSize: size.width/20, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  'Email: ${currentUser?.email}',
+                                  style: GoogleFonts.play(color: Colors.white, fontSize: size.width/30, fontStyle: FontStyle.italic),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [CupertinoColors.activeBlue, Color(0xFF00009B)],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(size.width/10)),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.group),
+                      title: Text('About Us', style: GoogleFonts.play(fontStyle: FontStyle.italic),),
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUs()));
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.output_sharp),
+                      title: Text('Logout', style: GoogleFonts.play(fontStyle: FontStyle.italic),),
+                      onTap: () => logout(context),
                     ),
                   ],
                 ),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [CupertinoColors.activeBlue, Color(0xFF00009B)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(size.width/10)),
+              ),
+              Padding(
+                padding: EdgeInsets.all(size.width/30),
+                child: Column(
+                  children: [
+                    Text( "Developed By: ", style: GoogleFonts.play(fontSize: size.width/24, color: CupertinoColors.black, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),),
+                    Text( "Muhammad Azfar", style: GoogleFonts.play(fontSize: size.width/24, color: CupertinoColors.black, fontStyle: FontStyle.italic),),
+                  ],
                 ),
               ),
-              ListTile(
-                leading: Icon(Icons.group),
-                title: Text('About Us'),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUs()));
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.output_sharp),
-                title: Text('Logout'),
-                onTap: () => logout(context),
-              ),
+
             ],
           ),
         ),
@@ -298,10 +315,10 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("WELCOME TO",
+                      Text("Welcome to",
                           style: GoogleFonts.play(
                               color: CupertinoColors.white,
-                              fontSize: size.width/18,
+                              fontSize: size.width/16,
                               fontWeight: FontWeight.w900,
                               fontStyle: FontStyle.italic)),
                       Text("BusE@se",
@@ -322,11 +339,9 @@ class _HomeState extends State<Home> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    PageTransition(
-                        type: PageTransitionType.leftToRight,
-                        child: BusSearch(),
-                        inheritTheme: true,
-                        ctx: context),
+                    MaterialPageRoute(
+                      builder: (context) => BusSearch(),
+                    ),
                   );
                 },
                 myColor: CupertinoColors.activeBlue,

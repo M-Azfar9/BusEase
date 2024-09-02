@@ -630,11 +630,9 @@ class _BusSeatsState extends State<BusSeats> {
                             print("Bus Ticket updated successfully");
                             Navigator.push(
                               context,
-                              PageTransition(
-                                  type: PageTransitionType.leftToRight,
-                                  child: PdfPreviewPage(bus: widget.bus, seatList: seatList,),
-                                  inheritTheme: true,
-                                  ctx: context),
+                              MaterialPageRoute(
+                                builder: (context) => PdfPreviewPage(bus: widget.bus, seatList: seatList,)
+                              ),
                             );
                           }
 

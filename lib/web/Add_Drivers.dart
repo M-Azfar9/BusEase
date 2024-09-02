@@ -322,6 +322,7 @@ class _AddDriversState extends State<AddDrivers> {
                                         ExpYrCont.clear();
                                         licenseCont.clear();
                                         selectedDriver = null;
+                                        serviceSelect = null;
                                       });
                                       Navigator.pop(context);
                                     }
@@ -487,6 +488,7 @@ class _AddDriversState extends State<AddDrivers> {
                                   licenseCont.text = filteredDrivers[index].licenseId;
                                   ExpYrCont.text = filteredDrivers[index].expYr;
                                   selectedDriver = filteredDrivers[index].service;
+                                  serviceSelect = filteredDrivers[index].service;
                                   AddBox(size.height, size.width, index: drivers.indexOf(filteredDrivers[index]));
                                 },
                                 child: Row(
@@ -519,6 +521,11 @@ class _AddDriversState extends State<AddDrivers> {
                   right: size.width / 350,
                   child: FloatingActionButton(
                     onPressed: () {
+                      nameCont.clear();
+                      ExpYrCont.clear();
+                      licenseCont.clear();
+                      selectedDriver = null;
+                      serviceSelect = null;
                       AddBox(size.height, size.width);
                     },
                     child: Icon(Icons.add, size: size.height / 12),

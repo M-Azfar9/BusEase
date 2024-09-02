@@ -26,9 +26,9 @@ class _LoginWebState extends State<LoginWeb> {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            colors: [Color(0xFF00009B),Color(0xFF000035),Color(0xFF000016), Colors.black],
+            colors: [Color(0xFF0010FF), Color(0xFF00076D),Color(0xFF000556),Color(0xFF000035),Color(0xFF000016), Colors.black],
             center: Alignment.center,
-            radius: 1,
+            radius: 1.2,
           ),
         ),
         child: Center(

@@ -134,13 +134,13 @@ class _BusSearchState extends State<BusSearch> {
     List<Bus> getLocate = await fireS.getAllTickets();
 
     setState(() {
-      tickets = getLocate;
-      // tickets = getLocate
-      //     .where((ticket) =>
-      //         ticket.depDate == date &&
-      //         ticket.depCity == depCity &&
-      //         ticket.destCity == destCity)
-      //     .toList();
+      // tickets = getLocate;
+      tickets = getLocate
+          .where((ticket) =>
+              ticket.depDate == date &&
+              ticket.depCity == depCity &&
+              ticket.destCity == destCity)
+          .toList();
       isfetch = false;
     });
   }
@@ -298,7 +298,7 @@ class _BusSearchState extends State<BusSearch> {
                   ),
                 ),
               )
-                  :isfetch? Center(child: CircularProgressIndicator(color: CupertinoColors.activeBlue,),) : tickets.isEmpty? Center(
+                  :isfetch? Center(child: CupertinoActivityIndicator(color: CupertinoColors.black,radius: size.width/10,),) : tickets.isEmpty? Center(
                 child: Padding(
                   padding: EdgeInsets.all(size.width/12),
                   child: Text(
@@ -322,19 +322,18 @@ class _BusSearchState extends State<BusSearch> {
                       right: size.width / 40.0,
                     ),
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         final auth = FirebaseAuth.instance;
                         final user = auth.currentUser;
                         print(user?.email);
                         Navigator.push(
                           context,
-                          PageTransition(
-                              type: PageTransitionType.leftToRight,
-                              child: Ticketdetails(ticketBus: tickets[index],),
-                              inheritTheme: true,
-                              ctx: context),
+                          MaterialPageRoute(
+                            builder: (context) => Ticketdetails(ticketBus: tickets[index]),
+                          ),
                         );
                       },
+
                       child: Material(
                         elevation: 6.0, // Adjust the elevation for more or less shadow
                         borderRadius: BorderRadius.circular(size.width / 14),

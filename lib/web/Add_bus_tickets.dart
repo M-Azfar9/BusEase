@@ -345,7 +345,7 @@ class _AddBusTicketsState extends State<AddBusTickets> {
                             ),
                           ),
                           child: ClipOval(
-                            child: logo != null
+                            child: (logo != null)
                                 ? Image.network(
                                     logo!,
                                     fit: BoxFit
@@ -961,7 +961,9 @@ class _AddBusTicketsState extends State<AddBusTickets> {
                                                 destCity = null ;
                                                 busStops.clear();
                                                 serviceSelect = null;
+                                                logo = null;
                                               });
+                                              print(logo);
                                             }else{
                                               ScaffoldMessenger.of(context).showSnackBar(
                                                 SnackBar(
