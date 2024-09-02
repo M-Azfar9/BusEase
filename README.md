@@ -1,16 +1,37 @@
-# bus_ease
+# BusEase
+BusEase is a comprehensive bus ticket reservation system developed using Flutter and Firebase. This project aims to streamline the process of booking bus tickets, providing a user-friendly interface for travelers and a robust admin panel for bus service administrators.
 
-A new Flutter project.
+## Table of Contents
+Features
+Technologies Used
+Installation
+Usage
+Contributing
+License
+Features
+Ticket Booking & Seat Selection:
 
-## Getting Started
+Search for bus routes, view available buses, and select seats.
+Intuitive UI for a seamless booking experience.
+Ticket Management:
 
-This project is a starting point for a Flutter application.
+View and manage booked tickets with detailed information.
+Real-time updates via Firestore.
+Admin Panel:
 
-A few resources to get you started if this is your first Flutter project:
+Manage bus services, drivers, and terminal locations.
+Advanced search functionality for efficient record management.
+Real-time updates and secure data management.
+PDF Generation:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Generate and download PDF tickets with detailed information.
+Firebase Integration:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Authentication, real-time database updates, and secure data storage using Firebase.
+Enhanced UI/UX:
+
+Modern and intuitive design with interactive elements.
+Technologies Used
+Flutter: For building the cross-platform mobile application.
+Firebase: For authentication, real-time database, and storage.
+Git/GitHub: For version control and collaboration.
